@@ -41,21 +41,21 @@ The preprocessed dataset can be downloaded from this [link](https://pan.baidu.co
 
 ## Train
 ```
-#MSD dataset:
+# MSD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py 1
-#MTD dataset:
+# MTD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py 1
-#GSD dataset:
+# GSD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py 1
 ```
 
 ## Test
 ```
-#MSD dataset:
+# MSD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py  work_dirs/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512/iter_80000.pth
-#MTD dataset:
+# MTD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py work_dirs/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512/iter_40000.pth
-#GSD dataset:
+# GSD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py work_dirs/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512/iter_160000.pth
 ```
 
