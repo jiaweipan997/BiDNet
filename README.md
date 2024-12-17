@@ -4,8 +4,8 @@ This repo is the official implementation of "BiDNet: A Real-Time Semantic Segmen
 ## Installation
 Step 1. Create a conda environment and activate it.
 ```
-conda create --name BIDNet python=3.8 -y
-conda activate BIDNet
+conda create --name BiDNet python=3.8 -y
+conda activate BiDNet
 ```
 Step 2. Install PyTorch following [official instructions](https://pytorch.org/get-started/previous-versions/), e.g.
 ```
