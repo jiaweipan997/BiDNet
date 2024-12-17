@@ -38,6 +38,24 @@ python demo/image_demo.py demo/demo.png configs/pspnet/pspnet_r50-d8_4xb2-40k_ci
 
 ## Dataset prepare
 The preprocessed dataset can be downloaded from this [link](https://pan.baidu.com/s/1yqEHECbgDbgxbJRc-bAZag?pwd=s4hn) with the code s4hn.
+Create a new data folder and put the downloaded dataset in it and unzip it. The structure is as follows：
+```
+BiDNet
+├── mmseg
+├── tools
+├── configs
+├── data
+│   ├── MSD
+│   │   ├── imgs
+│   │   │   ├── train
+│   │   │   ├── val
+│   │   │   ├── test
+│   │   ├── labels
+│   │   │   ├── train
+│   │   │   ├── val
+│   │   │   ├── test
+
+```
 
 ## Train
 ```
