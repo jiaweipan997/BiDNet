@@ -4,8 +4,8 @@ This repo is the official implementation of "BiDNet". This repo contains the sup
 ## Installation
 Step 1. Create a conda environment and activate it.
 ```
-conda create --name BIDNet python=3.8 -y
-conda activate BIDNet
+conda create --name BIDNet python=3.8 -y  
+conda activate BIDNet  
 ```
 Step 2. Install PyTorch following [official instructions](https://pytorch.org/get-started/previous-versions/), e.g.
 ```
@@ -13,9 +13,9 @@ conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cud
 ```
 Step 3. Install MMCV using MIM.
 ```
-pip install -U openmim
-mim install mmengine
-mim install mmcv==2.0.0rc4
+pip install -U openmim  
+mim install mmengine  
+mim install mmcv==2.0.0rc4  
 ```
 Step 4. Install BIDNet.
 ```
