@@ -17,10 +17,10 @@ pip install -U openmim
 mim install mmengine
 mim install mmcv==2.0.0rc4
 ```
-Step 4. Install BIDNet.
+Step 4. Install BiDNet.
 ```
 git clone -b main https://github.com/jiaweipan997/BiDNet.git
-cd BIDNet
+cd BiDNet
 pip install -v -e .
 pip install ftfy
 pip install regex
