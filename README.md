@@ -76,18 +76,12 @@ BiDNet
 ## Training
 ```
 # MSD dataset:
-python tools/train.py configs/BiDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py
-# Or
 bash tools/dist_train.sh configs/BiDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py 1
 
 # MTD dataset:
-python tools/train.py configs/BiDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py
-# Or
 bash tools/dist_train.sh configs/BiDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py 1
 
 # GSD dataset:
-python tools/train.py configs/BiDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py
-# Or
 bash tools/dist_train.sh configs/BiDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py 1
 ```
 
