@@ -240,7 +240,7 @@ class MFCA(nn.Module):
                size=x[0].shape[2:],
                mode='bilinear',
                align_corners=False) for level in x
-       ]  
+        ]  
         C = torch.cat(x, dim=1)
         out = self.global_avgpool(C)
         out = self.conv1(out)
