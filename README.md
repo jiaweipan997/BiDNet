@@ -1,7 +1,8 @@
 # BiDNet
 This repo is the official implementation of "BiDNet: A Real-Time Semantic Segmentation Network with Anti-Feature Interference and Detail Recovery for Industrial Defects". This repo contains the supported code, configuration files, and datasets to reproduce the semantic segmentation results of BiDNet. The code is mainly based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on a single NVIDIA GTX 3090Ti GPU in CUDA 11.7, Python 3.8, and PyTorch 1.13.1.
 
-## [Code Snippet](mmseg/models/decode_heads/bidnet_head.py)
+## Code Snippet
+The code snippet is [here](mmseg/models/decode_heads/bidnet_head.py).
 
 ## Citation
 If you find our repo useful for your research, please consider citing our paper:
