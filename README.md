@@ -60,19 +60,23 @@ BiDNet
 ## Train
 ```
 # MSD dataset:
-bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py 1
+python tools/train.py configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py
+
 # MTD dataset:
-bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py 1
+python tools/train.py configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py
+
 # GSD dataset:
-bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py 1
+python tools/train.py configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py
 ```
 
 ## Test
 ```
 # MSD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py  work_dirs/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512/iter_80000.pth
+
 # MTD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py work_dirs/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512/iter_40000.pth
+
 # GSD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py work_dirs/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512/iter_160000.pth
 ```
