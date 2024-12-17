@@ -194,18 +194,26 @@ class Hamburger(nn.Module):
 
 
 class MFCA(nn.Module):
-    """Hamburger Module. It consists of one slice of "ham" (matrix
-    decomposition) and two slices of "bread" (linear transformation).
+    """MFCA Module.
 
     Args:
-        ham_channels (int): Input and output channels of feature.
-        ham_kwargs (dict): Config of matrix decomposition module.
-        norm_cfg (dict | None): Config of norm layers.
+        channels (int): The input (and output) channels of the MFCA Module.
+        ratio (int): Squeeze ratio in MFCA Module, the intermediate channel will be
+            ``int(channels/ratio)``. Default: 1.
+        conv_cfg (None or dict): Config dict for convolution layer.
+            Default: None, which means using conv2d.
+        act_cfg (dict or Sequence[dict]): Config dict for activation layer.
+            If act_cfg is a dict, two activation layers will be configured
+            by this dict. If act_cfg is a sequence of dicts, the first
+            activation layer will be configured by the first dict and the
+            second activation layer will be configured by the second dict.
+            Default: (dict(type='ReLU'), dict(type='HSigmoid', bias=3.0,
+            divisor=6.0)).
     """
 
     def __init__(self,
                  channels,
-                 ratio=16,
+                 ratio=1,
                  conv_cfg=None,
                  act_cfg=(dict(type='ReLU'),
                           dict(type='HSigmoid', bias=3.0, divisor=6.0))):
@@ -247,13 +255,13 @@ class MFCA(nn.Module):
         return A1
 
 class MFSA(nn.Module):
-    """Hamburger Module. It consists of one slice of "ham" (matrix
-    decomposition) and two slices of "bread" (linear transformation).
+    """MFSA Module.
 
     Args:
-        ham_channels (int): Input and output channels of feature.
-        ham_kwargs (dict): Config of matrix decomposition module.
-        norm_cfg (dict | None): Config of norm layers.
+        channels (int): The input (and output) channels of the MFSA Module.
+        norm_cfg (None or dict): Config dict for norm layer.
+        act_cfg (dict or Sequence[dict]): Config dict for activation layer.
+    
     """
 
     def __init__(self,channels,norm_cfg,act_cfg):
@@ -285,14 +293,33 @@ class BiDNetHead(BaseDecodeHead):
    Network with Anti-Feature Interference and Detail Recovery for Industrial Defects`_.
 
    Args:
-       ham_channels (int): input channels for Hamburger.
+       attention_channels (int): input channels for attention module.
            Defaults: 512.
-       ham_kwargs (int): kwagrs for Ham. Defaults: dict().
+      attention_kwargs (int): kwagrs for attention module. Defaults: dict().
    """
 
    def __init__(self, attention_channels=512, attention_kwargs=dict(), **kwargs):
        super().__init__(input_transform='multiple_select', **kwargs)
+
        self.attention_channels = attention_channels
+       self.Shallow_branch_dim = self.in_channels[0]//2
+       
+       # Shallow branch
+       self.Shallow_branch = InvertedResidual(
+               in_channels=self.Shallow_branch_dim,
+               out_channels=self.channels,
+               mid_channels=self.Shallow_branch_dim*6,
+               kernel_size=3,
+               stride=1,
+               se_cfg=dict(channels=self.Shallow_branch_dim*6, ratio=1, act_cfg=(dict(type='ReLU'), dict(type='HSigmoid', bias=3.0, divisor=6.0))),
+               with_expand_conv=True,
+               conv_cfg=self.conv_cfg,
+               norm_cfg=self.norm_cfg,
+               act_cfg=dict(type='HSwish'),
+               with_cp=False) 
+       
+       # Deep branch
+       self.MFCA = MFCA(**dict(channels=sum(self.in_channels), ratio=1, act_cfg=(dict(type='ReLU'),dict(type='HSigmoid', bias=3.0, divisor=6.0))))
 
        self.conv1 = ConvModule(
            sum(self.in_channels),
@@ -312,23 +339,7 @@ class BiDNetHead(BaseDecodeHead):
            norm_cfg=self.norm_cfg,
            act_cfg=self.act_cfg)
        
-       self.attention_dim = self.in_channels[0]//2
-
-       self.MFCA = MFCA(**dict(channels=sum(self.in_channels), ratio=1, act_cfg=(dict(type='ReLU'),dict(type='HSigmoid', bias=3.0, divisor=6.0))))
-
-       self.Shallow_branch = InvertedResidual(
-               in_channels=self.attention_dim,
-               out_channels=self.channels,
-               mid_channels=self.attention_dim*6,
-               kernel_size=3,
-               stride=1,
-               se_cfg=dict(channels=self.attention_dim*6, ratio=1, act_cfg=(dict(type='ReLU'), dict(type='HSigmoid', bias=3.0, divisor=6.0))),
-               with_expand_conv=True,
-               conv_cfg=self.conv_cfg,
-               norm_cfg=self.norm_cfg,
-               act_cfg=dict(type='HSwish'),
-               with_cp=False) 
-       
+       # Fuse
        self.MFSA = MFSA(self.channels, self.norm_cfg, self.act_cfg)
 
    
