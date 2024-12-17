@@ -290,7 +290,7 @@ class BiDNetHead(BaseDecodeHead):
    """BiDNet decode head.
 
    This decode head is the implementation of `BiDNet: A Real-Time Semantic Segmentation 
-   Network with Anti-Feature Interference and Detail Recovery for Industrial Defects`_.
+   Network with Anti-Feature Interference and Detail Recovery for Industrial Defects`.
 
    Args:
        attention_channels (int): input channels for attention module.
