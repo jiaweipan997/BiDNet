@@ -15,7 +15,7 @@ Step 3. Install MMCV using MIM.
 ```
 pip install -U openmim
 mim install mmengine
-mim install "mmcv>=2.0.0"
+mim install mmcv==2.0.0rc4
 ```
 Step 4. Install BIDNet.
 ```
@@ -39,27 +39,28 @@ python demo/image_demo.py demo/demo.png configs/pspnet/pspnet_r50-d8_4xb2-40k_ci
 ## Dataset prepare
 The pre-processed dataset can be downloaded from the link below.
 ```
-
+https://pan.baidu.com/s/1yqEHECbgDbgxbJRc-bAZag?pwd=s4hn
+code: s4hn
 ```
 
 ## Train
 ```
-MSD dataset:
+#MSD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py 1
-MTD dataset:
+#MTD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py 1
-GSD dataset:
+#GSD dataset:
 bash tools/dist_train.sh configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py 1
 ```
 
 ## Test
 ```
-MSD dataset:
+#MSD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512.py  work_dirs/bidnet_mscan-t_1xb8-adamw-80k_msd-512x512/iter_80000.pth
-MTD dataset:
+#MTD dataset:
 python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512.py work_dirs/bidnet_mscan-t_1xb4-adamw-40k_mtd-512x512/iter_40000.pth
-GSD dataset:
-python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py work_dirs/bidnet_mscan-t_1xb16-adamw-160k_mtd-512x512/iter_160000.pth
+#GSD dataset:
+python tools/test.py configs/BIDNet/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512.py work_dirs/bidnet_mscan-t_1xb16-adamw-160k_gsd-512x512/iter_160000.pth
 ```
 
 ## Get Params and FLOPs
