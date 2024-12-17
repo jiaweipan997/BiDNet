@@ -1,5 +1,5 @@
 # BiDNet
-This repo is the official implementation of "BiDNet". This repo contains the supported code, configuration files, and datasets to reproduce semantic segmentation results of "BiDNet". The code is based on [MMSegmentaionV1.2.2](https://github.com/open-mmlab/mmsegmentation/tree/main)
+This repo is the official implementation of "BiDNet". This repo contains the supported code, configuration files, and datasets to reproduce semantic segmentation results of "BiDNet". The code is based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main)
 
 ## Installation
 Step 1. Create a conda environment and activate it.
@@ -37,11 +37,7 @@ python demo/image_demo.py demo/demo.png configs/pspnet/pspnet_r50-d8_4xb2-40k_ci
 ```
 
 ## Dataset prepare
-The pre-processed dataset can be downloaded from the link below.
-```
-https://pan.baidu.com/s/1yqEHECbgDbgxbJRc-bAZag?pwd=s4hn
-code: s4hn
-```
+The preprocessed dataset can be downloaded from this [link](https://pan.baidu.com/s/1yqEHECbgDbgxbJRc-bAZag?pwd=s4hn) with the code s4hn.
 
 ## Train
 ```
