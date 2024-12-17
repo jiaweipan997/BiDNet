@@ -1,5 +1,5 @@
 # BiDNet
-This repo is the official implementation of "BiDNet". This repo contains the supported code, configuration files, and datasets to reproduce semantic segmentation results of "BiDNet". The code is based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on a single NVIDIA GTX 3090Ti GPU in CUDA 11.7, Python 3.8, and PyTorch 1.13.1.
+This repo is the official implementation of "BiDNet: A Real-Time Semantic Segmentation Network with Anti-Feature Interference and Detail Recovery for Industrial Defects". This repo contains the supported code, configuration files, and datasets to reproduce the semantic segmentation results of BiDNet. The code is based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on a single NVIDIA GTX 3090Ti GPU in CUDA 11.7, Python 3.8, and PyTorch 1.13.1.
 
 ## Installation
 Step 1. Create a conda environment and activate it.
