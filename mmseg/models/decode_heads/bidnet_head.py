@@ -9,7 +9,7 @@ from ..utils import resize
 from .decode_head import BaseDecodeHead
 
 from ..utils import make_divisible
-from ..utils import InvertedResidualV3 as InvertedResidual
+from ..utils import InvertedResidualV3 as MobileNetV3Block
 
 
 class Matrix_Decomposition_2D_Base(nn.Module):
@@ -300,7 +300,7 @@ class BiDNetHead(BaseDecodeHead):
        self.Shallow_branch_dim = self.in_channels[0]//2
        
        # Shallow branch
-       self.Shallow_branch = InvertedResidual(
+       self.Shallow_branch = MobileNetV3Block(
                in_channels=self.Shallow_branch_dim,
                out_channels=self.channels,
                mid_channels=self.Shallow_branch_dim*6,
