@@ -11,7 +11,7 @@ If you find our repo useful for your research, please consider citing our paper:
   title={BiDNet: A Real-Time Semantic Segmentation Network with Anti-Feature Interference and Detail Recovery for Industrial Defects}, 
   author={Pan, Jiawei and Zeng, Deyu and Wu, Zongze and Xie, Shengli},
   journal={IEEE Transactions on Instrumentation and Measurement},
-  year={2025},
+  year={2024},
 }
 ```
 
