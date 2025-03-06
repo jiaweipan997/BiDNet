@@ -7,7 +7,7 @@ The code snippet is [here](mmseg/models/decode_heads/bidnet_head.py).
 ## Citation
 If you find our repo useful for your research, please consider citing our paper:
 ```
-@ARTICLE{10912778,
+@ARTICLE{BiDNet,
   author={Pan, Jiawei and Zeng, Deyu and Wu, Zongze and Xie, Shengli},
   journal={IEEE Transactions on Instrumentation and Measurement}, 
   title={BiDNet: A Real-Time Semantic Segmentation Network with Anti-Feature Interference and Detail Recovery for Industrial Defects}, 
@@ -15,7 +15,6 @@ If you find our repo useful for your research, please consider citing our paper:
   volume={},
   number={},
   pages={1-1},
-  keywords={Feature extraction;Decoding;Accuracy;Interference;Defect detection;Transformers;Tin;Semantic segmentation;Ash;Training;Bilateral decoder network (BiDNet);multi-scale feature channel attention (MFCA);multi-scale feature spatial attention (MFSA);real-time semantic segmentation;industrial defect detection},
   doi={10.1109/TIM.2025.3548182}}
 ```
 
