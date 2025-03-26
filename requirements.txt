@@ -1,0 +1,70 @@
+addict==2.4.0
+aliyun-python-sdk-core==2.16.0
+aliyun-python-sdk-kms==2.16.5
+Brotli @ file:///croot/brotli-split_1714483155106/work
+certifi @ file:///croot/certifi_1725551672989/work/certifi
+cffi==1.17.1
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.1.7
+colorama==0.4.6
+contourpy==1.1.1
+crcmod==1.7
+cryptography==44.0.0
+cycler==0.12.1
+filelock==3.14.0
+fonttools==4.55.3
+ftfy==6.2.3
+idna @ file:///croot/idna_1714398848350/work
+importlib_metadata==8.5.0
+importlib_resources==6.4.5
+jmespath==0.10.0
+kiwisolver==1.4.7
+Markdown==3.7
+markdown-it-py==3.0.0
+matplotlib==3.7.5
+mdurl==0.1.2
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+mmcv==2.0.0rc4
+mmengine==0.10.5
+-e git+https://github.com/jiaweipan997/BiDNet.git@9491850413e22ec1efb2692a13fff56cdd2c589a#egg=mmsegmentation
+model-index==0.1.11
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+opencv-python==4.10.0.84
+opendatalab==0.0.10
+openmim==0.3.9
+openxlab==0.1.2
+ordered-set==4.1.0
+oss2==2.17.0
+packaging==24.2
+pandas==2.0.3
+pillow @ file:///croot/pillow_1721059439630/work
+platformdirs==4.3.6
+prettytable==3.11.0
+pycparser==2.22
+pycryptodome==3.21.0
+Pygments==2.18.0
+pyparsing==3.1.4
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+python-dateutil==2.9.0.post0
+pytz==2023.4
+PyYAML==6.0.2
+regex==2024.11.6
+requests==2.28.2
+rich==13.4.2
+scipy==1.10.1
+six==1.17.0
+tabulate==0.9.0
+termcolor==2.4.0
+tomli==2.2.1
+torch==1.13.1
+torchaudio==0.13.1
+torchvision==0.14.1
+tqdm==4.65.2
+typing_extensions @ file:///croot/typing_extensions_1715268824938/work
+tzdata==2024.2
+urllib3==1.26.20
+wcwidth==0.2.13
+yapf==0.43.0
+zipp==3.20.2
