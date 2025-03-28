@@ -12,9 +12,9 @@ If you find our repo useful for your research, please consider citing our paper:
   journal={IEEE Transactions on Instrumentation and Measurement}, 
   title={BiDNet: A Real-Time Semantic Segmentation Network with Anti-Feature Interference and Detail Recovery for Industrial Defects}, 
   year={2025},
-  volume={},
+  volume={74},
   number={},
-  pages={1-1},
+  pages={1-16},
   doi={10.1109/TIM.2025.3548182}}
 ```
 
